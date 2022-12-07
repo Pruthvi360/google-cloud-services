@@ -33,7 +33,7 @@ resource "google_bigtable_table" "table" {
   split_keys    = ["a", "b", "c"]
   
   column_family {
-    family = "name"
+    family = "personal"
   }
 
   lifecycle {
@@ -47,7 +47,7 @@ resource "google_bigtable_table" "table1" {
   split_keys    = ["a", "b", "c"]
   
   column_family {
-    family = "name"
+    family = "personal"
   }
 
   lifecycle {
