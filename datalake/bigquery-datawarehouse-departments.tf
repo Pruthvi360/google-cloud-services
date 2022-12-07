@@ -4,7 +4,6 @@ resource "google_bigquery_dataset" "dwh-bq-marketing" {
   description                 = ""
   project = google_project.data-marts.project_id
   location                    = local.region
-  depends_on = [google_project_service.data-marts-service] 
   # Order of access matters
   # WRITER -> OWNER -> READER
 #   access {
@@ -26,7 +25,6 @@ resource "google_bigquery_dataset" "dwh-bq-finance" {
   description                 = ""
   project = google_project.data-marts.project_id
   location                    = local.region
-  depends_on = [google_project_service.data-marts-service] 
 #   access {
 #     role          = "WRITER"
 #     group_by_email = "${local.unique_id}-ds@gmail.com"
@@ -46,7 +44,6 @@ resource "google_bigquery_dataset" "dwh-bq-sales" {
   description                 = ""
   project = google_project.data-marts.project_id
   location                    = local.region
-  depends_on = [google_project_service.data-marts-service] 
 #   access {
 #     role          = "WRITER"
 #     group_by_email = "${local.unique_id}-ds@gmail.com"
