@@ -1,5 +1,6 @@
 resource "google_bigtable_instance" "production-instance" {
   name = "tf-bigtable-instance"
+  project = "bigtable-demo-370915"
 
   # A cluster with fixed number of nodes.
   cluster {
