@@ -29,5 +29,4 @@ resource "google_compute_instance" "orchestration" {
         nat_ip = google_compute_address.orchestration-ip-static.address
     }
   }
-  depends_on = [google_project_service.data-lake-service, google_compute_address.orchestration-ip-static, google_compute_network.vpc-network]
 }
