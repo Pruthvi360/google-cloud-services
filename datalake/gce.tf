@@ -2,7 +2,6 @@
 resource "google_compute_network" "vpc-network" {
   project = google_project.data-lake.project_id
   name = "vpc-network"
-  depends_on = [google_project_service.data-lake-service]
 }
 
 # Create static external IP address
@@ -10,7 +9,6 @@ resource "google_compute_address" "orchestration-ip-static" {
   project = google_project.data-lake.project_id
   region = local.region
   name = "${local.unique_id}-external-ip"
-  depends_on = [google_project_service.data-lake-service]
 }
 
 # Create orchestration instance
