@@ -31,6 +31,10 @@ resource "google_bigtable_table" "table" {
   name          = "tf-table"
   instance_name = google_bigtable_instance.production-instance.name
   split_keys    = ["a", "b", "c"]
+  
+  column_family {
+    family = "name"
+  }
 
   lifecycle {
     prevent_destroy = true
@@ -41,6 +45,10 @@ resource "google_bigtable_table" "table1" {
   name          = "tf-table1"
   instance_name = google_bigtable_instance.production-instance.name
   split_keys    = ["a", "b", "c"]
+  
+  column_family {
+    family = "name"
+  }
 
   lifecycle {
     prevent_destroy = true
