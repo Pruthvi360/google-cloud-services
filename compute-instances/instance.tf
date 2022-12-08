@@ -18,7 +18,7 @@ resource "google_compute_instance" "ansible-controller" {
   provisioning_model = "SPOT"
 
   network_interface {
-    subnetwork = google_compute_subnetwork.default.id
+    network = default
 
     access_config {
       # Include this section to give the VM an external IP address
@@ -44,7 +44,7 @@ resource "google_compute_instance" "ansible-local-host-1" {
   provisioning_model = "SPOT"
 
   network_interface {
-    subnetwork = google_compute_subnetwork.default.id
+    network = default
 
     access_config {
       # Include this section to give the VM an external IP address
@@ -70,7 +70,7 @@ resource "google_compute_instance" "ansible-local-host-2" {
   provisioning_model = "SPOT"
 
   network_interface {
-    subnetwork = google_compute_subnetwork.default.id
+    network = default
 
     access_config {
       # Include this section to give the VM an external IP address
