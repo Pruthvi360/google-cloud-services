@@ -31,12 +31,14 @@ resource "google_compute_instance" "ansible-local-host-1" {
   project = "var.project_id"
   zone = "us-central1-a"
   machine_type = "e2-micro"
-  lables = "ansible-host"
   tags         = ["ssh"]
 
   boot_disk {
     initialize_params {
       image = "debian-cloud/debian-11"
+      labels = {
+        my_label = "value"
+      }
     }
   }
 
@@ -57,12 +59,14 @@ resource "google_compute_instance" "ansible-local-host-2" {
   project = "var.project_id"
   zone = "us-central1-a"
   machine_type = "e2-micro"
-  lables = "ansible-host"
   tags         = ["ssh"]
 
   boot_disk {
     initialize_params {
       image = "debian-cloud/debian-11"
+      labels = {
+        my_label = "value"
+      }
     }
   }
 
