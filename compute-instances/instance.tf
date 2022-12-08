@@ -38,7 +38,7 @@ resource "google_compute_instance" "ansible-controller" {
 
 resource "google_compute_instance" "ansible-local-host-1" {
   provider = google-beta
-  name = var.name
+  name = "${var.name}-1"
   project = var.project_id
   zone = var.zone
   machine_type = var.machine_type
