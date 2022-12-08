@@ -29,5 +29,6 @@ variable "machine_type" {
 
 variable "labels" {
   description = "List of labels to attach to the VM instance."
-  type        = "ansible-local-host"
+  type        = string    
+  default     = "ansible-local-host"
 }
