@@ -85,7 +85,7 @@ resource "google_compute_instance" "ansible-local-host-2" {
   
   labels = {
     environment = "ansible-local-host"
-
+  }
   boot_disk {
     initialize_params {
       image = "debian-cloud/debian-11"
