@@ -4,7 +4,7 @@ resource "google_compute_instance" "ansible-controller" {
   provider     = google-beta
   name         = "ansible-controller"
   project      = "var.project_id"
-  zone         = "us-central1-a"
+  zone         = "us-west4-a"
   machine_type = "e2-micro"
   tags         = ["ssh"]
 
@@ -32,7 +32,7 @@ resource "google_compute_instance" "ansible-local-host-1" {
   provider = google-beta
   name = "ansible-local-host-1"
   project = "var.project_id"
-  zone = "us-central1-a"
+  zone = "us-west4-a"
   machine_type = "e2-micro"
   tags         = ["ssh"]
 
@@ -60,7 +60,7 @@ resource "google_compute_instance" "ansible-local-host-2" {
   provider = google-beta
   name = "ansible-local-host-2"
   project = "var.project_id"
-  zone = "us-central1-a"
+  zone = "us-west4-a"
   machine_type = "e2-micro"
   tags         = ["ssh"]
 
