@@ -7,6 +7,10 @@ resource "google_compute_instance" "ansible-controller" {
   zone         = "us-west4-a"
   machine_type = "e2-micro"
   tags         = ["ssh"]
+  
+  labels = {
+    environment = "ansible-controller"
+  }
 
   boot_disk {
     initialize_params {
@@ -39,12 +43,15 @@ resource "google_compute_instance" "ansible-local-host-1" {
   zone = "us-west4-a"
   machine_type = "e2-micro"
   tags         = ["ssh"]
+  
+  labels = {
+    environment = "ansible-local-host"
 
   boot_disk {
     initialize_params {
       image = "debian-cloud/debian-11"
       labels = {
-        my_label = "value"
+        my_label = "local-host"
       }
     }
   }
@@ -71,6 +78,9 @@ resource "google_compute_instance" "ansible-local-host-2" {
   zone = "us-west4-a"
   machine_type = "e2-micro"
   tags         = ["ssh"]
+  
+  labels = {
+    environment = "ansible-local-host"
 
   boot_disk {
     initialize_params {
