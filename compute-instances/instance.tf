@@ -4,7 +4,7 @@ resource "google_compute_instance" "ansible-controller" {
   zone = "us-central1-a"
   machine_type = "e2-micro"
   provisioning_model = "SPOT"
-  metadata_startup_script = "#! bin/bash 
+  metadata_startup_script = "sudo apt-get update; sudo apt-get install ansible"
 }
 
 resource "google_compute_instance" "ansible-local-host-1" {
