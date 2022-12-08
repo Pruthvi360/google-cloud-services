@@ -25,8 +25,8 @@ resource "google_compute_instance" "ansible-controller" {
     }
   
    scheduling {
-     preemptible = "true"
-     auto_restart = "false"
+     preemptible = true
+     automatic_restart = false
      provisioning_model = "SPOT"
    }
 }
@@ -56,8 +56,8 @@ resource "google_compute_instance" "ansible-local-host-1" {
     }
   
   scheduling {
-    preemptible = "true"
-    auto_restart = "false"
+    preemptible = true
+    automatic_restart = false
     provisioning_model = "SPOT"
   }
 }
@@ -87,8 +87,8 @@ resource "google_compute_instance" "ansible-local-host-2" {
     }
   
   scheduling {
-    preemptible = "true"
-    auto_restart = "false"
+    preemptible = true
+    automatic_restart = false
     provisioning_model = "SPOT"
   }
 }
