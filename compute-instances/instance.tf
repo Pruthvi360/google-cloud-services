@@ -51,7 +51,7 @@ resource "google_compute_instance" "ansible-local-host-1" {
     initialize_params {
       image = "debian-cloud/debian-11"
       labels = {
-        my_label = "local-host"
+        my_label = "value"
       }
     }
   }
