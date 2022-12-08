@@ -18,7 +18,7 @@ variable "zone" {
 variable "name" {
   description = "Web server name."
   type        = string
-  default     = "my-webserver"
+  default     = "ansible-local-host"
 }
 
 variable "machine_type" {
