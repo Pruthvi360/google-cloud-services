@@ -19,16 +19,16 @@ resource "google_compute_instance" "ansible-controller" {
 
   network_interface {
     network = "default"
-
+  }
     access_config {
       # Include this section to give the VM an external IP address
     }
-    scheduling {
-      preemptible = "true"
-      auto_restart = "false"
-      provisioning_model = "SPOT"
-    }
-  }
+  
+   scheduling {
+     preemptible = "true"
+     auto_restart = "false"
+     provisioning_model = "SPOT"
+   }
 }
 
 resource "google_compute_instance" "ansible-local-host-1" {
@@ -50,15 +50,15 @@ resource "google_compute_instance" "ansible-local-host-1" {
 
   network_interface {
     network = "default"
-
+  }
     access_config {
       # Include this section to give the VM an external IP address
     }
-    scheduling {
-      preemptible = "true"
-      auto_restart = "false"
-      provisioning_model = "SPOT"
-    }
+  
+  scheduling {
+    preemptible = "true"
+    auto_restart = "false"
+    provisioning_model = "SPOT"
   }
 }
 
@@ -81,14 +81,14 @@ resource "google_compute_instance" "ansible-local-host-2" {
 
   network_interface {
     network = "default"
-
+  }
     access_config {
       # Include this section to give the VM an external IP address
     }
-    scheduling {
-      preemptible = "true"
-      auto_restart = "false"
-      provisioning_model = "SPOT"
-    }
+  
+  scheduling {
+    preemptible = "true"
+    auto_restart = "false"
+    provisioning_model = "SPOT"
   }
 }
