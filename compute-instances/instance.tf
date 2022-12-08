@@ -4,9 +4,9 @@ resource "google_compute_instance" "ansible-controller" {
   provider     = google-beta
   name         = "ansible-controller"
   project      = var.project_id
-  zone         = "us-west4-a"
-  machine_type = "e2-micro"
-  tags         = ["ssh"]
+  zone         = var.zone
+  machine_type = var.machine_type
+  tags         = ["ssh","https-server","http-server"]
   
   labels = {
     environment = "ansible-controller"
@@ -38,14 +38,14 @@ resource "google_compute_instance" "ansible-controller" {
 
 resource "google_compute_instance" "ansible-local-host-1" {
   provider = google-beta
-  name = "ansible-local-host-1"
+  name = var.name
   project = var.project_id
-  zone = "us-west4-a"
-  machine_type = "e2-micro"
-  tags         = ["ssh"]
+  zone = var.zone
+  machine_type = var.machine_type
+  tags         = ["ssh","https-server","http-server"]
   
   labels = {
-    environment = "ansible-local-host"
+    environment = var.labels
 
   boot_disk {
     initialize_params {
@@ -76,11 +76,11 @@ resource "google_compute_instance" "ansible-local-host-1" {
 
 resource "google_compute_instance" "ansible-local-host-2" {
   provider = google-beta
-  name = "ansible-local-host-2"
+  name = var.name
   project = var.project_id
-  zone = "us-west4-a"
-  machine_type = "e2-micro"
-  tags         = ["ssh"]
+  zone = var.zone
+  machine_type = var.machine_type
+  tags         = ["ssh","https-server","http-server"]
   
   labels = {
     environment = "ansible-local-host"
