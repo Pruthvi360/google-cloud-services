@@ -46,6 +46,7 @@ resource "google_compute_instance" "ansible-local-host-1" {
   
   labels = {
     environment = var.labels
+  }
 
   boot_disk {
     initialize_params {
