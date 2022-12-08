@@ -19,6 +19,10 @@ resource "google_compute_instance" "ansible-controller" {
 
   network_interface {
     network = "default"
+    
+    access_config {
+      // Ephemeral public IP
+    }
   }
   
    scheduling {
@@ -47,6 +51,10 @@ resource "google_compute_instance" "ansible-local-host-1" {
 
   network_interface {
     network = "default"
+    
+    access_config {
+      // Ephemeral public IP
+    }
   }
   
   scheduling {
@@ -75,6 +83,10 @@ resource "google_compute_instance" "ansible-local-host-2" {
 
   network_interface {
     network = "default"
+    
+    access_config {
+      // Ephemeral public IP
+    }
   }
   
   scheduling {
