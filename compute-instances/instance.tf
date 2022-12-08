@@ -15,7 +15,6 @@ resource "google_compute_instance" "ansible-controller" {
 
   # Install Ansible
   metadata_startup_script = "sudo apt-get update; sudo apt-get install ansible"
-  provisioning_model = "SPOT"
 
   network_interface {
     network = "default"
@@ -24,6 +23,8 @@ resource "google_compute_instance" "ansible-controller" {
       # Include this section to give the VM an external IP address
     }
     scheduling {
+      preemptible = "true"
+      auto_restart = "false"
       provisioning_model = "SPOT"
     }
   }
@@ -52,6 +53,8 @@ resource "google_compute_instance" "ansible-local-host-1" {
       # Include this section to give the VM an external IP address
     }
     scheduling {
+      preemptible = "true"
+      auto_restart = "false"
       provisioning_model = "SPOT"
     }
   }
@@ -73,9 +76,6 @@ resource "google_compute_instance" "ansible-local-host-2" {
     }
   }
 
- 
-  provisioning_model = "SPOT"
-
   network_interface {
     network = "default"
 
@@ -83,6 +83,8 @@ resource "google_compute_instance" "ansible-local-host-2" {
       # Include this section to give the VM an external IP address
     }
     scheduling {
+      preemptible = "true"
+      auto_restart = "false"
       provisioning_model = "SPOT"
     }
   }
