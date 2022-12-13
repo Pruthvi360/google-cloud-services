@@ -8,8 +8,10 @@ service_account_file: /etc/ansible/service_account.json
 
 keyed_groups:
   # Create groups from GCE labels
-  - prefix: gcp
-    key: labels
+  - key: labels
+    prefix: label
+  - key: zone
+    prefix: zone
     
 groups:
   remote: "'ansible-local-host' in (lables|list)"
