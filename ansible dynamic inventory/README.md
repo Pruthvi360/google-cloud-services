@@ -15,3 +15,4 @@ Make config Directory
 mkdir ansible
 vi ansible.cfg
 
+ansible-galaxy collection install google.cloud
