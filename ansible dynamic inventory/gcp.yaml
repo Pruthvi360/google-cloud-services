@@ -11,6 +11,9 @@ keyed_groups:
   - prefix: gcp
     key: labels
     
+groups:
+  remote: "'ansible-local-host' in (lables|list)"
+    
 hostnames:
   # List host by name instead of the default public ip
   - name    
