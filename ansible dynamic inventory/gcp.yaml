@@ -1,7 +1,7 @@
 plugin: google.cloud.gcp_compute
 
 projects:
-  - youtube-371506
+  - youtube-demo-371510
   
 auth_kind: serviceaccount 
 service_account_file: /etc/ansible/service_account.json
