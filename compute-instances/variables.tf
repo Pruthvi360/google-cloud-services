@@ -1,6 +1,6 @@
 variable "project_id" {
 type =string
-default = "ansible-demo-371020"
+default = "youtube-demo-371510"
 }
 
 variable "region" {
