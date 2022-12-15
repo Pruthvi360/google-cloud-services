@@ -19,7 +19,7 @@ resource "google_compute_instance" "ansible-controller" {
   }
 
   # Install Ansible
-  metadata_startup_script = "sudo apt-get update; sudo apt-get install ansible -y"
+  metadata_startup_script = "sudo apt update; sudo apt-get install python3-pip -y; sudo apt install ansible -y; ansible-config init --disabled -t all > ansible.cfg"
 
   network_interface {
     network = "default"
