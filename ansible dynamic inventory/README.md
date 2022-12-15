@@ -1,6 +1,18 @@
 Installing Ansible
 
-Operating system Debian-11
+Operating system ubuntu-22.10
+
+sudo pip install 'ansible==2.0.0.1' 
+
+OR
+
+And if you want to have more than one installed version, just use create virtualenv:
+
+virtualenv .env
+source .env/bin/activate
+pip install 'ansible==2.2.0.0'
+
+OR
 
 $ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
 $ sudo apt update
