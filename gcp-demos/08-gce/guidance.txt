@@ -1,0 +1,2 @@
+Launch GCE Instance (Console)
+Launch GCE Instance (Cloud SDK)
