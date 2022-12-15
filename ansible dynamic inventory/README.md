@@ -2,9 +2,15 @@ Installing Ansible
 
 Operating system ubuntu-22.10
 
-sudo apt-get install python-pip python-dev-is-python3
+sudo apt update
 
-sudo pip install 'ansible==2.0.0.1' 
+sudo apt install python3-pip -y
+
+python3 -m pip -V
+
+sudo apt install ansible -y
+
+ansible-config init --disabled -t all > ansible.cfg
 
 OR
 
