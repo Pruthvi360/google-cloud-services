@@ -1,0 +1,13 @@
+---
+- name: install start and enable httpd service
+  hosts: nodes
+  tasks: 
+   - name: install packages
+     package: 
+       name: httpd
+       state: latest
+   - name: start and enable service
+     service:
+       name: httpd
+       state: started
+       enable: yes
