@@ -49,12 +49,12 @@ auth_kind: serviceaccount
 service_account_file: /home/admin_/service_account.json
 
 keyed_groups:
-  # Create groups from GCE labels
-  - prefix: gcp
-    key: labels
-
+  - key: labels
+    prefix: label
+  - key: zone
+    prefix: zone
 groups:
-  remote: "'ansible-local-host' in (lables|list)"
+  remote: "'ansible-local-host' in (labels|list)"
   
   
 ansible-inventory -i /home/admin_/gcp.yaml --list
