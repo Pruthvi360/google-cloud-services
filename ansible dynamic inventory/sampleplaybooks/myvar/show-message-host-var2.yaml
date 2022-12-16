@@ -1,0 +1,15 @@
+---
+- name: showing message
+  hosts: db
+  ignore_erros: true
+  tasks:
+    - debug:
+        msg: the message {{ message }}
+    - debug:
+        msg: we are executing on {{ ansible_hostname }}
+
+- name: showing lamp messages
+  hosts: lamp
+  tasks:
+    - debug:
+        msg: the lamp message is {{ message }} 
