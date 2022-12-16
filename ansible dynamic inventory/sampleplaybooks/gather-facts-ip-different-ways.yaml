@@ -1,0 +1,17 @@
+---
+- name: show ip in different ways
+  hosts: all
+  tasks:
+  - name: show ip address
+    debug:
+      msg: >
+        This host uses ip address {{ ansible_facts['default_ipv4']['address'] }}
+  - name: show ip new and deprecated
+    debug:
+      msg: This host used ip address {{ ansible_facts.default_ipv4.address }}
+  - name: again - old notation one
+    debug:
+      msg: This host uses {{ ansible_default_ipv4['address'] }}
+  - name:
+    debug:
+      msg: This host uses {{ ansible_default_ipv4.address }}
