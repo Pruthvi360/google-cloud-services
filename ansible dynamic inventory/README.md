@@ -8,31 +8,50 @@ sudo apt install python3-pip -y
 
 python3 -m pip -V
 
+pip install requests google-auth
+
 sudo apt install ansible -y
 
 ansible-config init --disabled -t all > ansible.cfg
 
-OR
+ansible-galaxy collection install google.cloud
 
-And if you want to have more than one installed version, just use create virtualenv:
-
-virtualenv .env
-source .env/bin/activate
-pip install 'ansible==2.2.0.0'
-
-OR
-
-$ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
-$ sudo apt update
-$ sudo apt install ansible
+ansible-galaxy collection list
 
 Verify installation
 
 $ ansible --version
 
+Create service account in gcp give compute admin permission
+Download json file
+Upload it to your ansible controller and specify path in gcp.yaml file.
+
 Make config Directory
 
-mkdir ansible
 vi ansible.cfg
 
-ansible-galaxy collection install google.cloud
+[defaults]
+inventory      = /home/admin_/gcp.yaml
+
+[inventory]
+enable inventory plugins, default: 'host_list', 'script', 'auto', 'yaml', 'ini', 'toml'
+enable_plugins = host_list, virtualbox, yaml, constructed, google.cloud.gcp_compute, gcp_compute
+
+vi gcp.yaml
+
+---
+plugin: gcp_compute
+
+projects:
+  - youtube-demo-371815
+
+auth_kind: serviceaccount
+service_account_file: /home/admin_/service_account.json
+
+keyed_groups:
+  # Create groups from GCE labels
+  - prefix: gcp
+    key: labels
+
+groups:
+  remote: "'ansible-local-host' in (lables|list)"
