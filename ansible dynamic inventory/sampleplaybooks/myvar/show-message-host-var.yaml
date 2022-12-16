@@ -1,0 +1,6 @@
+---
+- name: showing message
+  hosts: nodes
+  tasks:
+    - debug:
+        msg: the message {{ message }}
