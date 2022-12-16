@@ -1,0 +1,15 @@
+---
+- name: using a variable include file
+  hosts: ansible2
+  vars_files: 
+    - myvars.yaml
+  tasks:
+  - name: install package
+    yum:
+      name: "{{ mypackage }}
+      state: latest
+  - name:
+    service:
+      name: "{{ mypackage }}"
+      state: started
+      enable: yes
