@@ -1,0 +1,11 @@
+#create user 
+adduser demo_user
+
+As per the above command, we are adding the “demo_user” with the help of the adduser command.
+
+#create Specific User ID
+adduser -u 2000 demo_user1
+
+As per the above command, we are adding the specific user ID for the “demo_user1” user. We are using the “-u” option to add the specific user id i.e. 2000.
+
+#create
