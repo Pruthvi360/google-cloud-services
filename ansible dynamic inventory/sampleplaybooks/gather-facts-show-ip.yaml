@@ -1,0 +1,7 @@
+---
+- name: show ip on hosts
+  hosts: all
+  - name: show ip address
+    debug:
+      msg: >
+        This host uses IP address {{ ansible_default_ipv4.address }}
