@@ -1,0 +1,9 @@
+---
+- name: test register
+  hosts: all
+  tasks:
+  - user:
+      name: pruthvi
+    register: makeuser
+  - debug:
+      var: makeuser
