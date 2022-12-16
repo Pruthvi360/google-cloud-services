@@ -55,3 +55,7 @@ keyed_groups:
 
 groups:
   remote: "'ansible-local-host' in (lables|list)"
+  
+  
+ansible-inventory -i /home/admin_/gcp.yaml --list
+ansible-inventory -i /home/admin_/gcp.yaml --graph
