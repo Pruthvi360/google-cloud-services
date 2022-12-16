@@ -1,0 +1,8 @@
+mypackage: 
+  - nmap
+  - httpd
+  - mysql
+  - php
+  - docker.io
+mystpservice: vsftpd
+myfileservice: smb
