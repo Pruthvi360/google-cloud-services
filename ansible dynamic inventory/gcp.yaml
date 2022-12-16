@@ -1,4 +1,4 @@
-plugin: google.cloud.gcp_compute
+plugin: gcp_compute
 
 projects:
   - youtube-demo-371510
@@ -8,8 +8,8 @@ service_account_file: /etc/ansible/service_account.json
 
 keyed_groups:
   # Create groups from GCE labels
-  - key: labels
-    prefix: label
+  - prefix: gcp
+    key: label
   - key: zone
     prefix: zone
     
