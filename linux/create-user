@@ -3,9 +3,26 @@ adduser demo_user
 
 As per the above command, we are adding the “demo_user” with the help of the adduser command.
 
-#create Specific User ID
+#create & add Specific User ID
 adduser -u 2000 demo_user1
 
 As per the above command, we are adding the specific user ID for the “demo_user1” user. We are using the “-u” option to add the specific user id i.e. 2000.
 
-#create
+#create & add Specific Group ID
+useradd -u 2001 -g 10000 demo_user2
+
+As per the above command, we are adding the specific group ID for the “demo_user5” user. We are using the “-g” option to add the specific group id i.e. 1000.
+
+#create & To Add the New User in Multiple Groups
+useradd -G data_user,demo_user demo_user6
+
+As per the above command, we are using the “-G” option in the useradd command. We are adding the “demo_user6” user to the “data_user,demo_user” group.
+
+#Add User with Account Expiry Date
+useradd -e 2060-01-01 demo_user9
+chage -l demo_user9
+
+We have set the account to expire date“Jan 1, 2060” for the user “demo_user9” user. After the expiration date, the account will stop performing.
+
+
+
