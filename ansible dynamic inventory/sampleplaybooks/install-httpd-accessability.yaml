@@ -1,0 +1,32 @@
+---
+- name: install and enable httpd
+  gather_facts: false
+  hosts: nodes
+  tasks:
+  - name: install httpd
+    package:
+      name: httpd
+      state: latest
+  - name: start and enable service
+    service:
+      name: httpd
+      state: started
+      enable: yes
+  - name: permit traffic for http service
+    ansible.posix.firewalld:
+      name: http
+      permanent: yes
+      state: enabled
+      immediate: yes
+  - name: creating content
+    copy:
+      content: welcome to moon
+      dest: /var/www/html/index.html
+
+- name: test httpd accessibility
+  become: false
+  hosts: localhost
+  tasks:
+   - name: test httpd access
+     uri:
+       url: http://ansible2
