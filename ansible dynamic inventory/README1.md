@@ -201,3 +201,11 @@ vim ansible.cfg
 
 # always = no
 # context = 3
+
+vim inventory
+
+ansible-local-host-1
+ansbile-local-host-2
+ansible-controller
+
+
