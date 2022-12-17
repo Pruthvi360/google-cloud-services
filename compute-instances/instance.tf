@@ -19,8 +19,10 @@ resource "google_compute_instance" "ansible-controller" {
   }
 
   # Install Ansible
-  metadata_startup_script = "sudo apt update; sudo apt-get install python3-pip -y; sudo apt install ansible -y; ansible-config init --disabled -t all > ansible.cfg"
-
+  #metadata_startup_script = "sudo apt update; sudo apt-get install python3-pip -y; sudo apt install ansible -y; ansible-config init --disabled -t all > ansible.cfg"
+  
+  metadata_startup_script  = "${file("./start.sh")}"
+  
   network_interface {
     network = "default"
     
@@ -50,15 +52,12 @@ resource "google_compute_instance" "ansible-local-host-1" {
 
   boot_disk {
     initialize_params {
-      image = "debian-cloud/debian-11"
+      image = "ubuntu-minimal-2210-kinetic-amd64-v20221209"
       labels = {
         my_label = "value"
       }
     }
   }
-    
-    #metadata_startup_script  = "${file("./start.sh")}"
-     #}
 
   network_interface {
     network = "default"
@@ -88,7 +87,7 @@ resource "google_compute_instance" "ansible-local-host-2" {
   }
   boot_disk {
     initialize_params {
-      image = "debian-cloud/debian-11"
+      image = "ubuntu-minimal-2210-kinetic-amd64-v20221209"
       labels = {
         my_label = "value"
       }
