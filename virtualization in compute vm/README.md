@@ -1,16 +1,16 @@
-sudo apt update
-sudo apt upgrade
-hostnamectl  > to view underlying OS
-egrep -c '(vmx|svm)' /proc/cpuinfo   > to check KWM is support in your machine.
-sudo apt install qemu-kvm libvirt-daemon-system virtinst libvirt-clients bridge-utils  > installing essential KVM dependencies
-sudo systemctl enable libvirtd   > enable libvirt
-sudo systemctl start libvirtd    > to start libvirtd
-sudo systemctl status libvirtd   > to check libvirtd status
-sudo usermod -aG kvm $USER       > add user to KVM group
-sudo usermod -aG libvirt $USER   > add user to libvirt group
-sudo nano /etc/netplan/01-netcfg.yaml > edit yaml file
+#sudo apt update
+#sudo apt upgrade
+#hostnamectl  > to view underlying OS
+#egrep -c '(vmx|svm)' /proc/cpuinfo   > to check KWM is support in your machine.
+#sudo apt install qemu-kvm libvirt-daemon-system virtinst libvirt-clients bridge-utils  > installing essential KVM dependencies
+#sudo systemctl enable libvirtd   > enable libvirt
+#sudo systemctl start libvirtd    > to start libvirtd
+#sudo systemctl status libvirtd   > to check libvirtd status
+#sudo usermod -aG kvm $USER       > add user to KVM group
+#sudo usermod -aG libvirt $USER   > add user to libvirt group
+#sudo nano /etc/netplan/01-netcfg.yaml > edit yaml file
 
-network:
+#network:
     ethernets:
        eth0:
           dhcp4: false
@@ -33,6 +33,6 @@ network:
      version: 2
      
      
-     sudo netplan apply
+  #sudo netplan apply
      
-     ip addr show
+  #ip addr show
