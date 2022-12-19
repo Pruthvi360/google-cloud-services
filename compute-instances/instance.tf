@@ -1,4 +1,8 @@
 # Create a single Compute Engine instance
+resource "google_service_account" "ansible-service-account" {
+  account_id   = "terraform-user@youtube-demo-372114.iam.gserviceaccount.com"
+  display_name = "Service Account"
+}
 
 resource "google_compute_instance" "ansible-controller" {
   provider     = google-beta
