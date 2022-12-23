@@ -9,7 +9,7 @@
 # docker push gcr.io/$DEVSHELL_PROJECT_ID/hello-app:v1
 # docker run --rm -p 8080:8080 gcr.io/$DEVSHELL_PROJECT_ID/hello-app:v1
 # go to webpreview in cloudshell
-# gcloud container clusters create hello-app --num-nodes=2 --zone=us-central-a
+# gcloud container clusters create hello-app --num-nodes=2 --zone=us-central1-a
 # gcloud compute instances list
 # kubectl create deployment hello-app  --image=gcr.io/$DEVSHELL_PROJECT_ID/hello-app:v1
 # kubectl get pods
