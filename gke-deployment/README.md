@@ -32,3 +32,9 @@
 # curl 34.23.45.123:80    > load balancer ip
 # kubectl delete pod frontend-b96d466db-44t7h  > replace pod ip and check auto creation of pod within seconds
 # 
+
+## # AUTO PILOT
+
+# gcloud container --project "auto-pilot-demo" clusters create-auto "my-autopilot-cluster" --region "us-central1" --release-channel "regular" --network "projects/auto-pilot-demo/global/networks/default" --subnetwork "projects/auto-pilot-demo/regions/us-central1/subnetworks/default" --cluster-ipv4-cidr "/17" --services-ipv4-cidr "/22"
+
+## 
