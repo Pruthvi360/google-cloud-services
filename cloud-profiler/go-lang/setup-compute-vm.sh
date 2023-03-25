@@ -9,3 +9,8 @@ sudo apt-get install -y python3-pip
 ##Install the Profiler package:
 
 pip3 install google-cloud-profiler
+
+cd GoogleCloudPlatform/golang-samples/profiler/hotapp
+
+go run main.py
+
