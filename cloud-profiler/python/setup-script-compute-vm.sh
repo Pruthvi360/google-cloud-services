@@ -14,4 +14,12 @@ pip3 install google-cloud-profiler
 
 sudo apt install git -y
 
-git clone https://github.com/Pruthvi360/google-cloud-services/tree/master/cloud-profiler/python
+git clone https://github.com/Pruthvi360/google-cloud-services/
+
+cd google-cloud-services/cloud-profiler/python/
+
+sudo chmod 777 main.py
+
+python3 main.py
+
+
