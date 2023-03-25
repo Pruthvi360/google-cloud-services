@@ -8,6 +8,6 @@ git clone https://github.com/Pruthvi360/google-cloud-services/
 
 cd google-cloud-services/cloud-profiler/go-lang/
 
-sudo chmod +x setup-script-compute-vm.sh
+sudo chmod +x setup-compute-vm.sh
 
 ./setup-compute-vm.sh
