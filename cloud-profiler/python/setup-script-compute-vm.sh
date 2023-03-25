@@ -9,3 +9,9 @@ sudo apt-get install -y python3-pip
 ##Install the Profiler package:
 
 pip3 install google-cloud-profiler
+
+##Git Installation
+
+sudo apt install git -y
+
+git clone https://
