@@ -8,4 +8,4 @@ cd google-cloud-services/cloud-profiler/go-lang/
 
 sudo chmod +x setup-script-compute-vm.sh
 
-./setup-script-compute-vm.sh
+./setup-compute-vm.sh
