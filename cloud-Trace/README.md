@@ -1,4 +1,6 @@
-gcloud init
+## RUN THE BELOW COMMAND IN THE CLOUD SHELL
+
+#gcloud init
 
 gcloud services enable container.googleapis.com
 
