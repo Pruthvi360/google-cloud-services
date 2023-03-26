@@ -2,7 +2,9 @@ gcloud init
 
 gcloud services enable container.googleapis.com
 
-gcloud config set project phrasal-door-373004
+PROJECTID=on-prem-381812
+
+gcloud config set project $PROJECTID
 
 ZONE=us-central1-c
 gcloud container clusters create cloud-trace-demo     --zone $ZONE --disk-size "50"
