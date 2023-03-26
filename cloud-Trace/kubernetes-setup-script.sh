@@ -11,9 +11,9 @@ gcloud container clusters get-credentials cloud-trace-demo --zone $ZONE
 
 kubectl get nodes
 
-git clone https://github.com/GoogleCloudPlatform/python-docs-samples
+git clone https://github.com/Pruthvi360/google-cloud-services/
 
-cd python-docs-samples/trace/cloud-trace-demo-app-opentelemetry/
+cd google-cloud-services/cloud-trace/
 
 ./setup.sh
 
