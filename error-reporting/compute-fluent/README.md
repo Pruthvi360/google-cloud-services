@@ -7,7 +7,7 @@ cd google-cloud-services/error-reporting/compute-fluent/
 gcloud compute instances create example-instance --zone us-central-a --metadata-from-file startup-script=startup_script.sh
 
 
-gcloud compute copy-files main.py example-instance:~/main.py
+gcloud compute scp main.py example-instance:~/main.py
 
 gcloud compute ssh example-instance
 
