@@ -7,7 +7,7 @@ PROJECTID=on-prem-381812
 gcloud config set project $PROJECTID
 
 ZONE=us-central1-c
-gcloud container clusters create cloud-trace-demo     --zone $ZONE --disk-size "50"
+gcloud container clusters create cloud-Trace-demo     --zone $ZONE --disk-size "50"
 
 gcloud container clusters get-credentials cloud-trace-demo --zone $ZONE
 
