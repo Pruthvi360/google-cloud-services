@@ -17,6 +17,8 @@ git clone https://github.com/Pruthvi360/google-cloud-services/
 
 cd google-cloud-services/cloud-Trace/
 
+sudo chmod +x setup.sh 
+
 ./setup.sh
 
 kubectl get deployments
