@@ -3,7 +3,7 @@ SCRIPT_DIR=$(realpath $(dirname "$0"))
 pushd $SCRIPT_DIR > /dev/null
 
 echo ################## Set up cloud trace demo application ###########################
-kubectl apply -f app/cloud-trace-demo.yaml
+kubectl apply -f cloud-trace.yaml
 
 echo ""
 echo -n "Wait for load balancer initialization complete."
