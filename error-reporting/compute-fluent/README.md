@@ -10,4 +10,5 @@ gcloud compute instances create example-instance --zone us-central-a --metadata-
 gcloud compute copy-files main.py example-instance:~/main.py
 
 gcloud compute ssh example-instance
+
 python ~/main.py
