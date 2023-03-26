@@ -1,0 +1,14 @@
+POST https://www.googleapis.com/compute/v1/projects/phrasal-door-373004/regions/us-central1/routers/us-central
+{
+  "bgp": {
+    "advertiseMode": "DEFAULT",
+    "asn": 65511,
+    "keepaliveInterval": 20
+  },
+  "description": "us-central to asia-southeast",
+  "kind": "compute#router",
+  "name": "us-central",
+  "network": "projects/phrasal-door-373004/global/networks/default",
+  "region": "projects/phrasal-door-373004/regions/us-central1",
+  "selfLink": "projects/phrasal-door-373004/regions/us-central1/routers/us-central"
+}
