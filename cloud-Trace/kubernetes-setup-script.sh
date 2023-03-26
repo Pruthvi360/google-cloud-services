@@ -7,7 +7,7 @@ PROJECTID=on-prem-381812
 gcloud config set project $PROJECTID
 
 ZONE=us-central1-c
-gcloud container clusters create cloud-Trace-demo     --zone $ZONE --disk-size "50"
+gcloud container clusters create cloud-trace-demo     --zone $ZONE --disk-size "50"
 
 gcloud container clusters get-credentials cloud-trace-demo --zone $ZONE
 
@@ -15,7 +15,7 @@ kubectl get nodes
 
 git clone https://github.com/Pruthvi360/google-cloud-services/
 
-cd google-cloud-services/cloud-trace/
+cd google-cloud-services/cloud-Trace/
 
 ./setup.sh
 
