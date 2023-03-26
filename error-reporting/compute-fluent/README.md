@@ -11,6 +11,6 @@ gcloud compute instances create example-instance --zone=$ZONE --metadata-from-fi
 
 gcloud compute scp main.py example-instance:~/main.py
 
-gcloud compute ssh example-instance
+gcloud compute ssh example-instance --zone=$ZONE
 
 python ~/main.py
