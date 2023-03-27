@@ -1,13 +1,23 @@
 #sudo apt update
+
 #sudo apt upgrade
+
 #hostnamectl  > to view underlying OS
+
 #egrep -c '(vmx|svm)' /proc/cpuinfo   > to check KWM is support in your machine.
+
 #sudo apt install qemu-kvm libvirt-daemon-system virtinst libvirt-clients bridge-utils  > installing essential KVM dependencies
+
 #sudo systemctl enable libvirtd   > enable libvirt
+
 #sudo systemctl start libvirtd    > to start libvirtd
+
 #sudo systemctl status libvirtd   > to check libvirtd status
+
 #sudo usermod -aG kvm $USER       > add user to KVM group
+
 #sudo usermod -aG libvirt $USER   > add user to libvirt group
+
 #sudo nano /etc/netplan/01-netcfg.yaml > edit yaml file
 
 #network:
