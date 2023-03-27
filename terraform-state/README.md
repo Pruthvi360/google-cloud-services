@@ -46,5 +46,8 @@ terraform show
 
 ![image](https://user-images.githubusercontent.com/107435692/227871644-d582a8cd-ac7f-4d2a-ac1e-978ab6e01e0c.png)
 
+![image](https://user-images.githubusercontent.com/107435692/227872060-f06eeb60-1c96-44ab-bff9-a12ce75cfed4.png)
+
+
 
 
