@@ -4,7 +4,7 @@ gcloud config list project
 
 ## Navigate to API & services and credentials & click API key copy API key and export it to environment variable.
 
-export API_KEY= <your-api-key>
+export API_KEY=your-api-key
 
 touch request.json
 
