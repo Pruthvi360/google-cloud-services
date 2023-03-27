@@ -44,3 +44,7 @@ terraform refresh
 terraform show
 
 
+![image](https://user-images.githubusercontent.com/107435692/227871644-d582a8cd-ac7f-4d2a-ac1e-978ab6e01e0c.png)
+
+
+
