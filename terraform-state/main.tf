@@ -8,9 +8,15 @@ resource "google_storage_bucket" "test-bucket-for-state" {
   uniform_bucket_level_access = true
 }
 
-terraform {
-  backend "gcs" {
-    bucket  = "terraform-state-1996"
-    prefix  = "terraform/state"
-  }
+terraform { 
+  backend "local" { 
+    path = "terraform/state/terraform.tfstate" 
+  } 
 }
+
+#terraform {
+# backend "gcs"
+#  bucket  = "terraform-state-1996"
+#    prefix  = "terraform/state"
+#}
+#}
