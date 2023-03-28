@@ -148,5 +148,29 @@ gcloud compute ssh cloud-loadtest --zone us-east1-b
 iperf -c 192.168.1.2 -P 20 -x C
 
 
+Trouble shooting for the issues you may face
+Note: This is not part of lab instructions.
+While creating tunnels for the local network, if you forgot to replace [MY_SECRET] with "sharedsecret".
+You can delete the created VPN tunnels by following command:
 
+gcloud compute vpn-tunnels delete [tunnel-name] --region [region]
+Copied!
+replace [tunnel-name] with name of the tunnel
+
+replace [region] with the region which you specified while creating tunnel.
+
+If you are having trouble with the section single VPN load testing:
+Make sure you installed iperf on both VMs.
+
+In case of connection refused error, verify that:
+
+Firewall rules for created networks (tcp:5001)
+The server is running properly on on-prem-loadtest
+You are trying to connect to the server via cloud-loadtest
+If you are trying to see the forwarding rules that you created in the Console:
+In the Navigation menu go to the Networking section.
+
+Click on Hybrid Connectivity > VPN.
+
+Click on the Cloud VPN Gateway to view the Cloud VPN Gateway details page.
 
