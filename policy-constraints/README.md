@@ -6,8 +6,8 @@ cd google-cloud-services/policy-constraints/
 
 nano manin.tf
 
-## Replace <YOUR PROJECT ID>
+## Replace YOUR PROJECT ID
 
-## Replace <USER-email>
+## Replace USER-email
   
 terraform init
