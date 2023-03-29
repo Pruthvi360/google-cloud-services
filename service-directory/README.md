@@ -22,3 +22,29 @@ Service Directory solves the following problems:
 ## Limitations of pure DNS: 
                             DNS resolvers can be unreliable in terms of respecting TTLs and caching, cannot handle larger record sizes, and do not offer an easy way
                             to serve metadata to users. In addition to DNS support, Service Directory offers HTTP and gRPC APIs to query and resolve services.
+
+
+1. Enable to enable the Service Directory API.
+2. click +REGISTER SERVICE.
+3. select Standard for Service type.
+4. Next
+5. use us-central1.
+6. Create Name-spaces > example-namespace > Create
+7. Service Name > example-service > create
+
+## Configuring an endpoint
+
+1. Click +Add Endpoint.
+2. Endpoint name > example-endpoint
+3. Ip Address= 0.0.0.0 > Port= 80
+
+## Configuring a Service Directory DNS zone
+
+1. Network Services menu, select Cloud DNS.
+2. Create zone. > Private 
+3. Zone Name = example-zone-name
+4. DNS Name = myzone.example.com
+5. Options = select Use a service directory namespace
+6. Network = Default
+7. Region = us-central1
+8. Name-spaces = example-namespace
