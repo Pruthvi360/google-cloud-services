@@ -1,4 +1,4 @@
-### Overview
+## Overview ##
 ## Service Directory helps reduce the complexity of management and operations by providing a single place to publish, discover, and connect services. 
 ## It is a managed service that enhances service inventory management at scale so you don’t have to. Service Directory provides real-time service information, 
 ## whether you have a few service endpoints or thousands. This helps ensure that your applications only resolve the most updated information of their resources, 
