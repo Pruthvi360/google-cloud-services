@@ -7,14 +7,18 @@ With Service Directory, you can easily understand all your services across multi
  information for all your services.
 Service Directory solves the following problems:
 
-## Interoperability: Service Directory is a universal naming service that works across Google Cloud, multi-cloud, and on-premises. 
+## Interoperability: 
+                     Service Directory is a universal naming service that works across Google Cloud, multi-cloud, and on-premises. 
                      You can migrate services between these environments and still use the same service name to register and resolve endpoints.
 
-## Service management: Service Directory is a managed service. Your organization doesn't have to worry about the high availability, redundancy,
+## Service management: 
+                       Service Directory is a managed service. Your organization doesn't have to worry about the high availability, redundancy,
                        scaling, or maintenance concerns of maintaining your own service registry.
 
-## Access Control: With Service Directory, you can control who can register and resolve your services using IAM. 
+## Access Control: 
+                   With Service Directory, you can control who can register and resolve your services using IAM. 
                    Assign Service Directory roles to teams, service accounts, and organizations.
 
-## Limitations of pure DNS: DNS resolvers can be unreliable in terms of respecting TTLs and caching, cannot handle larger record sizes, and do not offer an easy way
+## Limitations of pure DNS: 
+                            DNS resolvers can be unreliable in terms of respecting TTLs and caching, cannot handle larger record sizes, and do not offer an easy way
                             to serve metadata to users. In addition to DNS support, Service Directory offers HTTP and gRPC APIs to query and resolve services.
