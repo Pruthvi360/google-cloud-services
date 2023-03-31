@@ -2,6 +2,9 @@
 
 PROJECT_ID=$(gcloud config get-value project)
 REGION=us-west1
+PROJECT_NUM=$(gcloud projects list \
+--filter="$(gcloud config get-value project)" \
+--format="value(PROJECT_NUMBER)")
 
 # enable services API
 
