@@ -1,6 +1,7 @@
 # set variables
 
 PROJECT_ID=$(gcloud config get-value project)
+
 REGION=us-west1
 
 PROJECT_NUM=$(gcloud projects list \
