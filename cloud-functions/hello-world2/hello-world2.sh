@@ -17,6 +17,11 @@ gcloud services enable \
   logging.googleapis.com \
   pubsub.googleapis.com
   
+  
+# Binding the editor role to cloud build service
+
+gcloud projects add-iam-policy-binding $PROJECT_ID --member='serviceAccount:$PROJECT_NUM@cloudbuild.gserviceaccount.com' --role='roles/editor'
+
 # create directory  
   
 mkdir ~/hello-http && cd $_
