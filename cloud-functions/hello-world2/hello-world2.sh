@@ -28,14 +28,16 @@ functions.http('helloWorld', (req, res) => {
 
 # insert the below code to package.json
 
-printf "{
+cat > package.json <<EOF
+{
   "name": "nodejs-functions-gen2-codelab",
   "version": "0.0.1",
   "main": "index.js",
   "dependencies": {
     "@google-cloud/functions-framework": "^2.0.0"
   }
-}" >> package.json
+}
+EOF
 
 
 # deploy the cloud function
