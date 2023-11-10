@@ -1,0 +1,52 @@
+crypto ikev2 keyring ENCC_GCP_KEYRING
+peer GCP-CLOUD
+  address <GCP-PUBLIC-IP>
+  pre-shared-key <PSK>
+
+crypto ikev2 proposal ENCC_GCP_VPN_PROPOSAL
+  encryption aes-cbc-256 aes-cbc-192 aes-cbc-128
+  integrity sha256
+  group 16
+!
+crypto ikev2 policy ENCC_GCP_VPN_POLICY
+  proposal ENCC_GCP_VPN_PROPOSAL
+
+crypto ikev2 profile ENCC_GCP_VPN_PROFILE
+  identity local address <LOCAL-PUBLIC-IP>
+  match identity remote any
+  authentication local pre-share
+  authentication remote pre-share
+  keyring local ENCC_GCP_KEYRING
+  lifetime 28800
+  dpd 60 5 periodic
+
+crypto ipsec security-association lifetime seconds 3600
+crypto ipsec security-association replay window-size 1024
+
+crypto ipsec transform-set ENCC_GCP_VPN_TS esp-aes 256 esp-sha-hmac
+  mode tunnel
+
+crypto ipsec profile ENCC_GCP_VPN_VTI
+  set security-association lifetime seconds 3600
+  set transform-set ENCC_GCP_VPN_TS
+  set pfs group16
+  set ikev2-profile ENCC_GCP_VPN_PROFILE
+
+interface Tunnel1
+  ip address <LOCAL-VTI-IP> 255.255.255.252
+  ip mtu 1400
+  ip tcp adjust-mss 1360
+  tunnel source <UPSTREAM-INTERFACE>
+  tunnel mode ipsec ipv4
+  tunnel destination <GCP-PUBLIC-IP>
+  tunnel protection ipsec profile ENCC_GCP_VPN_VTI
+
+router bgp <LOCAL-AS>
+  bgp log-neighbor-changes
+  bgp graceful-restart
+  neighbor <REMOTE-VTI-IP> timers 20 60 60
+  neighbor <REMOTE-VTI-IP> remote-as <REMOTE-AS>
+  address-family ipv4
+  network <LOCAL-NETWORK>> mask <LOCAL-NETWORK-MASK>
+  neighbor <REMOTE-VTI-IP> activate
+  exit-address-family
