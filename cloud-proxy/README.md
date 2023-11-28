@@ -1,3 +1,20 @@
+# Terraform scripts
+```
+mkdir sql-with-terraform
+cd sql-with-terraform
+gsutil cp -r gs://spls/gsp234/gsp234.zip .
+unzip gsp234.zip
+```
+
+**Open variables.tf and modify the project and region variables to the values shown below:
+project: qwiklabs-gcp-03-44b23b40fac6
+region: us-east1**
+
+```
+terraform init
+terraform plan -out=tfplan
+terraform apply tfplan
+```
 # What the proxy provides
 
 The Cloud SQL Proxy provides secure access to your Cloud SQL Second Generation instances without having to allowlist IP addresses or configure SSL.
